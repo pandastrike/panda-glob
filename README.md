@@ -13,7 +13,7 @@ A globbing wrapper around minimatch optimized for multiple calls against large d
     
 There is presently no async mode.
 
-For more, see the [docs for the minimatch library], which does the real work.
+For more, see the [docs for the minimatch library][0], which does the real work.
 
 [0]:https://github.com/isaacs/minimatch
 
