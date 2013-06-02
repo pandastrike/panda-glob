@@ -1,15 +1,16 @@
 {Minimatch} = require "minimatch"
-{readdir,stat, type,memoize} = require "fairmont"
+{readdir,stat,chdir,type,memoize} = require "fairmont"
 {join} = require "path"
 
 crawl = (path) ->
   fs = {}
-  for name in readdir( path )
-    thisPath = join( path, name )
-    fs[name] = if stat( thisPath ).isDirectory()
-      crawl( thisPath )
-    else 
-      thisPath
+  for name in readdir( if path? then path else "." )
+    unless name[0] == "."
+      thisPath = join( path, name )
+      fs[name] = if stat( thisPath ).isDirectory()
+        crawl( thisPath )
+      else 
+        thisPath
   fs
   
 flatten = (fs) ->
@@ -22,7 +23,8 @@ flatten = (fs) ->
         results.push( value )
   results
 
-lsR = memoize( (path) -> flatten( crawl( path ) ) )
+lsR = memoize( (path) -> 
+  chdir path, -> flatten( crawl() ) )
 
 mini = memoize( (pattern) -> new Minimatch( pattern ) )
 

@@ -1,5 +1,7 @@
 assert = require "assert"
 glob = require "./glob"
 
-assert glob(".","**/package.json").length == 5
+assert glob("node_modules","**/package.json").length == 4
 console.log "Pass"
+
+console.log glob("node_modules","**/package.json")
