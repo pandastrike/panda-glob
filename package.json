@@ -1,0 +1,24 @@
+{
+  "name": "panda-glob",
+  "version": "0.0.0",
+  "description": "A globbing wrapper around minimatch optimized for multiple calls against large directories",
+  "main": "glob.coffee",
+  "dependencies": {
+    "fairmont": "~0.4.1",
+    "minimatch": "~0.2.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "coffee test.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dyoder/panda-glob.git"
+  },
+  "keywords": [
+    "glob",
+    "minimatch"
+  ],
+  "author": "Dan Yoder",
+  "license": "MIT"
+}
