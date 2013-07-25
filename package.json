@@ -1,10 +1,10 @@
 {
   "name": "panda-glob",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A globbing wrapper around minimatch optimized for multiple calls against large directories",
   "main": "glob.coffee",
   "dependencies": {
-    "fairmont": "0.5.x",
+    "fairmont": "~0.5.3",
     "minimatch": "~0.2.12"
   },
   "devDependencies": {},

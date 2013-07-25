@@ -4,7 +4,8 @@
 
 crawl = (path) ->
   fs = {}
-  for name in readdir( if path? then path else "." )
+  path ?= "."
+  for name in readdir( path )
     unless name[0] == "."
       thisPath = join( path, name )
       fs[name] = if stat( thisPath ).isDirectory()
